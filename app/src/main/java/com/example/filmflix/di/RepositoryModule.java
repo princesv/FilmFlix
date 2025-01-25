@@ -1,6 +1,6 @@
 package com.example.filmflix.di;
 
-import com.example.filmflix.MoviesRepository;
+import com.example.filmflix.repository.MoviesRepository;
 import com.example.filmflix.di.annotations.ApplicationScoped;
 import com.example.filmflix.retrofit.MoviewApi;
 import com.example.filmflix.room.MoviesDB;

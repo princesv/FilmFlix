@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="@string/popular_movies"
+        android:id="@+id/popular_movies"/>
+<item
+    android:title="@string/favourite_movies"
+    android:id="@+id/fav_movies"/>
+    <item
+        android:title="@string/search_movies"
+        app:showAsAction="always"
+        android:icon="@drawable/baseline_search_24"
+        android:id="@+id/search_btn"/>
+</menu>

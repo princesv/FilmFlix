@@ -19,7 +19,14 @@ public interface MoviesDao {
     @Query("SELECT * FROM Movie")
     LiveData<List<Movie>> getMovies();
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     void putMovies(List<Movie> movies);
+
+    @Query("SELECT * FROM Movie WHERE isFavourite=true")
+    LiveData<List<Movie>> getFavouriteMovies();
+
+    @Query("UPDATE Movie SET isFavourite = :isFavourite WHERE id = :movieId")
+    void updateMovieFavoriteStatus(int movieId, boolean isFavourite);
+
 }
 

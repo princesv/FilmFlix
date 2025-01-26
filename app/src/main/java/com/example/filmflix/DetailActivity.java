@@ -71,13 +71,12 @@ public class DetailActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Movie currMovie=movie.getValue();
                 if(movie.getValue().isFavourite()==false){
-                    Movie currMovie=movie.getValue();
-                    detailViewModel.switchFavouriteStatus(movie.getValue().getId(),true);
+                    detailViewModel.switchFavouriteStatus(movie.getValue(),true);
                     detailViewModel.updateMovie(new Movie(currMovie,true));
                 }else{
-                    Movie currMovie=movie.getValue();
-                    detailViewModel.switchFavouriteStatus(movie.getValue().getId(),false);
+                    detailViewModel.switchFavouriteStatus(movie.getValue(),false);
                     detailViewModel.updateMovie(new Movie(currMovie,false));
                 }
             }

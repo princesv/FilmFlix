@@ -101,8 +101,11 @@ public class MainActivity extends AppCompatActivity implements MoviesRvAdapter.L
         int itemId=item.getItemId();
         if(itemId==R.id.popular_movies){
             mainMoviesViewModel.isFav.setValue(0);
-        }else{
+        }else if(itemId==R.id.fav_movies){
             mainMoviesViewModel.isFav.setValue(1);
+        }else{
+            Intent intentToStartSearchActivity = new Intent(MainActivity.this, SearchActivity.class);
+            startActivity(intentToStartSearchActivity);
         }
         return true;
     }

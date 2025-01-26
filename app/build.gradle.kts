@@ -5,7 +5,6 @@ plugins {
 android {
     namespace = "com.example.filmflix"
     compileSdk = 34
-
     defaultConfig {
         applicationId = "com.example.filmflix"
         minSdk = 28

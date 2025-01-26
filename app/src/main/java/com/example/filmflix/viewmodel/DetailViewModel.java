@@ -18,8 +18,8 @@ public class DetailViewModel extends ViewModel {
     public MutableLiveData<Movie> getMovieDetail(){
         return moviesRepository.movie;
     }
-    public void switchFavouriteStatus(int id,boolean f){
-        moviesRepository.switchFavouriteStatus(id,f);
+    public void switchFavouriteStatus(Movie movie,boolean f){
+        moviesRepository.switchFavouriteStatus(movie,f);
     }
     public void updateMovie(Movie movie){
         moviesRepository.movie.setValue(movie);

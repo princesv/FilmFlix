@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.filmflix.models.MovieList;
 import com.example.filmflix.repository.MoviesRepository;
 import com.example.filmflix.models.Movie;
 

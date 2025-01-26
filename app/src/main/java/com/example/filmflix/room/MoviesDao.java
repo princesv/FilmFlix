@@ -28,5 +28,8 @@ public interface MoviesDao {
     @Query("UPDATE Movie SET isFavourite = :isFavourite WHERE id = :movieId")
     void updateMovieFavoriteStatus(int movieId, boolean isFavourite);
 
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    void putMovie(Movie movie);
+
 }
 

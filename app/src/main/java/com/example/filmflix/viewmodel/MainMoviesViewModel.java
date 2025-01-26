@@ -15,7 +15,7 @@ import javax.inject.Inject;
 
 public class MainMoviesViewModel extends ViewModel {
     MoviesRepository moviesRepository;
-    MutableLiveData<Integer> isFav;
+    public MutableLiveData<Integer> isFav;
     @Inject
     public MainMoviesViewModel(MoviesRepository moviesRepository){
         this.moviesRepository=moviesRepository;

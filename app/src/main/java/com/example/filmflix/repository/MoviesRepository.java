@@ -46,25 +46,9 @@ public class MoviesRepository {
         return moviesDB.moviesDao().getFavouriteMovies();
     }
     public void switchFavouriteStatus(int movieId,boolean f){
-        Call<MovieList> call = movieApi.getMovies();
-        call.enqueue(new Callback<MovieList>() {
-            @Override
-            public void onResponse(Call<MovieList> call, Response<MovieList> response) {
-                if (response.isSuccessful()) {
-                    ExecutorService executorService = Executors.newSingleThreadExecutor();
-                    executorService.execute(() -> {
-                        moviesDB.moviesDao().updateMovieFavoriteStatus(movieId,f);
-                        moviesDB.moviesDao().updateMovieFavoriteStatus(movieId,f);
-                    });
-                } else {
-                    // Handle the error, response code is available through response.code()
-                }
-            }
-
-            @Override
-            public void onFailure(Call<MovieList> call, Throwable t) {
-                Log.d("MovieRepository","Network call failed");
-            }
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        executorService.execute(() -> {
+            moviesDB.moviesDao().updateMovieFavoriteStatus(movieId,f);
         });
     }
 
